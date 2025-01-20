@@ -1,0 +1,59 @@
+Sales by Product Name
+SELECT ProductName, SUM(TransactionAmount) AS TotalSales
+FROM SalesData
+GROUP BY ProductName
+ORDER BY TotalSales DESC;
+
+Sales by Customer Age Group
+SELECT 
+    CASE 
+        WHEN CustomerAge BETWEEN 18 AND 25 THEN '18-25'
+        WHEN CustomerAge BETWEEN 26 AND 35 THEN '26-35'
+        WHEN CustomerAge BETWEEN 36 AND 45 THEN '36-45'
+        WHEN CustomerAge BETWEEN 46 AND 55 THEN '46-55'
+        WHEN CustomerAge > 55 THEN '56+'
+        ELSE 'Unknown' 
+    END AS AgeGroup,
+    SUM(TransactionAmount) AS TotalSales
+FROM SalesData
+GROUP BY AgeGroup;
+
+Sales by Gender
+SELECT CustomerGender, SUM(TransactionAmount) AS TotalSales
+FROM SalesData
+GROUP BY CustomerGender;
+
+Sales by Region and Payment Method
+SELECT Region, PaymentMethod, SUM(TransactionAmount) AS TotalSales
+FROM SalesData
+GROUP BY Region, PaymentMethod;
+
+Sales for Transactions with and without Discount
+SELECT
+    CASE 
+        WHEN DiscountPercent > 0 THEN 'With Discount'
+        ELSE 'No Discount'
+    END AS DiscountCategory,
+    SUM(TransactionAmount) AS TotalSales
+FROM SalesData
+GROUP BY DiscountCategory;
+
+Return Analysis by Product
+SELECT ProductName, 
+       SUM(CASE WHEN Returned = 1 THEN 1 ELSE 0 END) AS Returns,
+       SUM(TransactionAmount) AS TotalSales,
+       (SUM(CASE WHEN Returned = 1 THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS ReturnRate
+FROM SalesData
+GROUP BY ProductName
+ORDER BY ReturnRate DESC;
+
+Shipping Cost by Region
+SELECT Region, AVG(ShippingCost) AS AvgShippingCost
+FROM SalesData
+GROUP BY Region;
+
+Sales by Loyalty Points Usage
+SELECT LoyaltyPoints, SUM(TransactionAmount) AS TotalSales
+FROM SalesData
+GROUP BY LoyaltyPoints
+ORDER BY TotalSales DESC;

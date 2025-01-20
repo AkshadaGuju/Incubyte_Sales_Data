@@ -1,0 +1,39 @@
+Aggregate Insights:
+Total Sales Revenue:
+
+Sum of TransactionAmount across all transactions.
+Can also be broken down by PaymentMethod, Region, StoreType, etc.
+Total Quantity Sold:
+
+Sum of Quantity across all transactions.
+Average Discount:
+
+Average of DiscountPercent to evaluate overall discounting strategy.
+Customer Demographics:
+
+Average CustomerAge.
+Gender breakdown (CustomerGender).
+Sales by Region & City:
+
+Total sales (TransactionAmount) grouped by Region and City.
+Sales by Store Type:
+
+Compare sales in StoreType (e.g., online vs. physical stores).
+Sales on Promotional Items:
+
+Total sales (TransactionAmount) for items marked as promotional (IsPromotional = 1).
+Return Rate:
+
+Percentage of items returned (Returned column).
+Shipping Costs:
+
+Average ShippingCost for all transactions.
+Delivery Efficiency:
+
+Average DeliveryTimeDays for all transactions.
+Feedback Sentiment:
+
+Average FeedbackScore across all transactions.
+Loyalty Points Usage:
+
+Sum of LoyaltyPoints used across all transactions.

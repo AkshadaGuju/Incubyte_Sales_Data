@@ -1,0 +1,18 @@
+Sales by Product:
+
+Break down total TransactionAmount by ProductName.
+Sales by Customer Segment:
+
+Drill down by CustomerAge and CustomerGender.
+Sales by Region and Payment Method:
+
+Grouping sales by Region and PaymentMethod to understand payment preferences regionally.
+Impact of Discounts on Sales:
+
+Compare total sales for transactions with DiscountPercent and without.
+Return Analysis:
+
+Drill into products or regions with high return rates, analyzing how Returned correlates with ProductName, Region, and City.
+Shipping Cost by Region:
+
+Drill down on ShippingCost by Region and StoreType to identify shipping inefficiencies.

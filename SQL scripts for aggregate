@@ -1,0 +1,50 @@
+Total Sales Revenue
+SELECT SUM(TransactionAmount) AS TotalSalesRevenue
+FROM SalesData;
+
+Total Quantity Sold
+SELECT SUM(Quantity) AS TotalQuantitySold
+FROM SalesData;
+
+Average Discount Percentage
+SELECT AVG(DiscountPercent) AS AverageDiscount
+FROM SalesData;
+
+Average Customer Age
+SELECT AVG(CustomerAge) AS AverageCustomerAge
+FROM SalesData;
+
+Total Sales by Region
+SELECT Region, SUM(TransactionAmount) AS TotalSales
+FROM SalesData
+GROUP BY Region;
+
+Total Sales by Store Type
+SELECT StoreType, SUM(TransactionAmount) AS TotalSales
+FROM SalesData
+GROUP BY StoreType;
+
+Total Sales for Promotional Items
+SELECT SUM(TransactionAmount) AS TotalPromotionalSales
+FROM SalesData
+WHERE IsPromotional = 1;
+
+Return Rate
+SELECT (SUM(CASE WHEN Returned = 1 THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS ReturnRate
+FROM SalesData;
+
+Average Shipping Cost
+SELECT AVG(ShippingCost) AS AvgShippingCost
+FROM SalesData;
+
+Average Delivery Time
+SELECT AVG(DeliveryTimeDays) AS AvgDeliveryTime
+FROM SalesData;
+
+Average Feedback Score
+SELECT AVG(FeedbackScore) AS AvgFeedbackScore
+FROM SalesData;
+
+Total Loyalty Points Earned
+SELECT SUM(LoyaltyPoints) AS TotalLoyaltyPoints
+FROM SalesData;
